@@ -172,10 +172,10 @@ function createRows() {
     /* Selects all the minus buttons */
     let del = document.getElementsByClassName("del");
 
-    /* Loop through plus &minus buttons to add an event listener*/
+    /* Loop through plus & minus buttons to add an event listener*/
     for (let i = 0; i < plus.length; i++) {
 
-        /* Add an event listener t0 plus btns */
+        /* Add an event listener to plus btns */
         plus[i].addEventListener("click", function () {
             plusQtty(i);
             Total();
@@ -199,28 +199,28 @@ function createRows() {
 
 /* Calculate the total price of the elements in the cart */
 function Total() {
-    let total = 0;
+    let subtotal = 0;
     for (let val of cart) {
-        total = total + (val.price * val.qtty);
+        subtotal = total + (val.price * val.qtty);
     }
 
     /* Display subtotal*/
     document.getElementById("sub-total-price").innerHTML = total.toFixed(2) + " €";
 
     /* Calculate price after discount*/
-    total = total - Discount(total);
+    let total = subtotal - Discount(subtotal);
 
     /* Display order total*/
     document.getElementById("total-price").innerHTML = total.toFixed(2) + " €";
 }
 
 /*Apply 10% discount when price is over 100 € */
-function Discount(total) {
+function Discount(subtotal) {
     let discount = 0;
     let discountFrom = 100;
 
-    if (total >= discountFrom) {
-        discount = (total * 10) / 100;
+    if (subtotal >= discountFrom) {
+        discount = (subtotal * 10) / 100;
     }
 
     /* Display discount*/
