@@ -1,20 +1,3 @@
-var productsBike = [{
-    name: "Cube 2019",
-    image: "./img/cube2019.jpeg",
-    price: 3200.00,
-    qtty: 1
-}, {
-    name: "GT Avalanche",
-    image: "./img/gtavalanche.jpg",
-    price: 2100.00,
-    qtty: 1
-}, {
-    name: "Trek 8",
-    image: "./img/trekfull8.jpg",
-    price: 4500.00,
-    qtty: 1
-}];
-
 let products = [
     {
         qtty: 1,
@@ -107,7 +90,6 @@ for (let val of products) {
 
     }
 }
-
 
 
 var cart = [];
